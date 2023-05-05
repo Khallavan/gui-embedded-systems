@@ -43,7 +43,7 @@ class Comm:
         if not self.ser.is_open:
             raise ValueError('COM no detected')
         self.data_to_send = str(data)
-        self.ser.write(self.data_to_send.encode())
+        self.ser.write(self.data_to_send.encode('ascii'))
 
     def read_data(self) -> None:
         try:
